@@ -81,12 +81,21 @@
         depositBtn.addEventListener("click", function(){
             
             const depositNumber = getInputNumber("depositAmount");
-
-
-            updateSpanText("currentDeposit",depositNumber);
+            
+            if(depositNumber<0){
+                alert("deposit number can not be nagetive")
+            }
+            else{
+                updateSpanText("currentDeposit",depositNumber);
             updateSpanText("currentBalance",depositNumber);
 
             document.getElementById("depositAmount").value = "";
+            }
+
+            // updateSpanText("currentDeposit",depositNumber);
+            // updateSpanText("currentBalance",depositNumber);
+
+            // document.getElementById("depositAmount").value = "";
 
         })
         // withdrow button event handler
